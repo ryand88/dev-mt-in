@@ -1,0 +1,20 @@
+		<div class="top-bar">
+			<span class="left-button"><a href = "#!search"><img ng-src="./images/icons/search.svg"></a></span>
+			<span class="title">DevMountain</span>
+			<span class="right-button"><img ng-src="./images/icons/ham.svg"></span>
+		</div>
+        
+        <div class="row">
+			<div class="col-xs-5">
+				<div class="welcome-text">Welcome to <span style="color: #74fdf2">DevMountain</span> Social<br>Add Some Info So Friends Can Find You</div>
+				<input class = "new-input" placeholder="Full Name" ng-model="fullName">
+				<input class = "new-input" placeholder="Tagline" ng-model="tagline">
+				<input class = "new-input" placeholder="Profile Image URL" ng-model="imgUrl">
+				<textarea rows="8" placeholder="Bio" ng-model="bio"></textarea>
+				<a href="" class = "btn btn-block" ng-click="newUser()">Save Changes</a>
+			</div>
+
+			<div class="col-xs-7">
+				<img src="./images/holderimage.png" class="img-fluid triangle">
+			</div>
+		</div>

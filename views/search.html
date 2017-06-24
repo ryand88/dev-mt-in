@@ -1,0 +1,46 @@
+<div class="top-bar">
+	<span class="left-button" ng-click="goBack()"><a href=""><img ng-src="./images/icons/back-arrow.svg"></a></span>
+	<span class="title">DevMountain</span>
+	<span class="right-button"><img ng-src="./images/icons/ham.svg"></span>
+</div>
+
+<div class="row">
+	<div class="col-xs-5">
+                <h1 class="text-left">{{theNewUser.first}}</h1>
+                <h1 class="text-right">{{theNewUser.last}}</h1>
+                <p class="tagline">{{theNewUser.tagline}}<p>
+                <p class="bio">{{theNewUser.bio}}</p>
+
+	</div>
+
+	<div class="col-xs-7">
+
+		<div class="friend-header">
+			<div class="sort-button-container">
+				<div class="search-icon"><img ng-src="./images/icons/search.svg"></div>
+			</div>
+			<input class = "search-bar" placeholder="Search For Friends" ng-model="searchItem">
+			</input>
+		</div>
+		<div class="friend-container" ng-repeat="user in users.slice(currentPage * 6 , (currentPage + 1) * 6) | orderBy: sortProp | filter:{fullName:searchItem}">
+			<div class="friend-image-container">
+				<img ng-src="{{user.profileUrl}}" class="img-fluid friend-image">
+				<div class="friend-image-overlay">
+					<div class="friend-image-text">{{user.first}} {{user.last}}<br>
+						<a ui-sref="friendview({id:user.id})" class="btn view-button">View Profile</a>
+					</div>
+
+				</div>
+			</div>
+		</div>
+		<div class="pagination">
+			<button class="btn page-btn" ng-disabled="currentPage == 0" ng-click="currentPage=currentPage-1">
+        Previous
+    	</button> {{currentPage+1}}/{{numberOfPages()}}
+			<button class="btn page-btn" ng-disabled="currentPage >= users.length/6 - 1" ng-click="currentPage=currentPage+1">
+        Next
+		</button>
+		</div>
+	</div>
+
+</div>

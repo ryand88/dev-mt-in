@@ -1,14 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+<html data-ng-app="myApp">
 
 <head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+	<link rel="stylesheet" type="text/css" href="./css/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet">
 	<meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>DevMtin</title>
 </head>
 
 <body>
+	<div class="main-container">
+		<ui-view></ui-view>
+	</div>
+	<footer>
+		<span class="left-foot"><a ui-sref="friends"><span id="lefty">View Friends</span></a></span>
+		<span class="mid-foot"><a ui-sref="search"><span id="middy">Find Friends</span></a></span>
+		<span class="right-foot"><span id="righty">Update Profile</span></span>
+	</footer>
 
-  
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular-route.js"></script>
+	<script src="./js/app.js"></script>
+	<script src="./js/FriendCtrl.js"></script>
+	<script src="./js/friendViewCtrl.js"></script>
+	<script src="./js/friendService.js"></script>
+	<script src="./js/views.js"></script>
 </body>
+
 </html>
